@@ -1,0 +1,50 @@
+@baseurl=https://localhost:3020/api
+@url={{baseurl}}/locations
+###
+GET {{url}} HTTP/1.1
+
+###
+# @name post
+POST {{url}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "type": "FeatureCollection",
+    "features": []
+}
+
+###
+GET {{url}}/{{post.response.body.id}} HTTP/1.1
+
+###
+PUT {{url}}/{{post.response.body.id}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "type": "FeatureCollection",
+    "features": [{}]
+}
+
+###
+DELETE {{url}}/{{post.response.body.id}} HTTP/1.1
+
+###
+GET {{baseurl}}/search/?m=Mumbai, India
+###
+GET {{baseurl}}/search/?q=frankfurt, germany
+
+###
+GET {{baseurl}}/search123/?q=frankfurt, germany
+
+###
+# @name bigrequest
+GET {{baseurl}}/search/?q=france
+
+###
+POST {{url}}/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "type": "FeatureCollection",
+    "features": [{{bigrequest.response.body.features[0]}}]
+}
