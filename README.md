@@ -8,9 +8,9 @@ Project is configured to be compatible with different providers. It supports one
 
 Database is JSON document and can be used to store destination information from different providers. Project showcases OSM (Open Street Map) API and TomTom API providers. 
 
-### Client configuation
+### Client configuration
 
-- Add your client provider creation at `routes\search.js` in following format
+- Add your client provider creation at `routes\search.js` in following format.
 ```js
 var locationSearch = MySearchProvider({
   key: "value"
@@ -19,7 +19,7 @@ var locationSearch = MySearchProvider({
 
 ### Adding new provider
 
-- Create new provider function with following signature
+- Create new provider function with following signature:
 
 ```js
 var g = require('geojson');
@@ -43,9 +43,9 @@ This project created using Express Server.
 
 ### lowdb and lowdb-api
 
-data storage and api is handled using lowdb and lowdb api libraries
+Data storage and api is handled using lowdb and lowdb api libraries
 
-### other
+### Other
 
 Centralized error handling mechanism added. All erros are passed as json errors for client application to easily parsed. api-error-handler library is used for same.
 
@@ -57,6 +57,8 @@ Used for requesting data from third party api.
 
 - HTTPS support: Project supports HTTPS protocol.
 
-- Debugging, with VS Code extenstions
+- Debugging, with VS Code extensions
 
-- nodemon: for continuous developement
+- nodemon: for continuous development
+
+
